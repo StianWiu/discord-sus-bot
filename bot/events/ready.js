@@ -2,7 +2,7 @@ const { Events, ActivityType } = require('discord.js');
 const axios = require('axios');
 const { EmbedBuilder } = require('discord.js');
 
-const checkUsers = async () => {
+const checkUsers = async (client) => {
   await axios({
     method: 'get',
     url: 'https://captcha.fridgedoorfamous.tech/api/user/kick',
@@ -55,7 +55,7 @@ module.exports = {
       ],
     });
 
-    await checkUsers();
+    await checkUsers(client);
     setInterval(async () => {
       await checkUsers();
     }, 1000 * 60 * 5);
