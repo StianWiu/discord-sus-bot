@@ -10,10 +10,9 @@ module.exports = {
     const timeDifference = now - userCreationDate;
     const timeDifferenceInMonths = timeDifference / (1000 * 60 * 60 * 24 * 30);
     if (timeDifferenceInMonths < 5) {
-      // You need to find the role '950127008644493313' from the guild the member joined
       const roles = interaction.guild.roles.cache;
       for (const [key, value] of roles) {
-        if (key === '950127008644493313') {
+        if (key === '1014253594142322738') {
           interaction.guild.members.fetch(user.id).then(async (member) => {
             member.roles.add(value);
             await axios({

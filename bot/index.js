@@ -85,7 +85,7 @@ app.get('/api/bot/unlock:userid', (req, res) => {
   userid = userid.substring(1);
   try {
     // Remember to change these when finished testing
-    const role = client.guilds.cache.get('803701994221076511').roles.cache.get('950127008644493313');
+    const role = client.guilds.cache.get('803701994221076511').roles.cache.get('1014253594142322738');
     client.guilds.cache.get('803701994221076511').members.fetch(userid).then(member => {
       member.roles.remove(role);
       res.status(200).send("Role removed");
