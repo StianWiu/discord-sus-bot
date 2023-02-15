@@ -11,6 +11,7 @@ module.exports = {
     const timeDifferenceInMonths = timeDifference / (1000 * 60 * 60 * 24 * 30);
     if (timeDifferenceInMonths < 5) {
       const roles = interaction.guild.roles.cache;
+      await new Promise(resolve => setTimeout(resolve, 2000));
       for (const [key, value] of roles) {
         if (key === '1014253594142322738') {
           interaction.guild.members.fetch(user.id).then(async (member) => {
@@ -56,6 +57,12 @@ module.exports = {
               // As to avoid a user getting stuck, remove the role because of an error
               member.roles.remove(value);
             });
+          });
+        }
+        if (key === '824975105347944478') {
+          // Remove the role from the user
+          interaction.guild.members.fetch(user.id).then(async (member) => {
+            member.roles.remove(value);
           });
         }
       }
