@@ -55,7 +55,8 @@ export default {
       this.loading = true;
       await axios({
         method: "get",
-        url: "http://localhost:3003/api/user/check:" + this.code,
+        url:
+          "https://captcha.fridgedoorfamous.tech/api/user/check:" + this.code,
         auth: {
           username: this.username,
           password: this.password,
