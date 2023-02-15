@@ -6,9 +6,8 @@ module.exports = {
     // If someone sends a message to the bot it will redirect it to a channel for moderators.
     if (interaction.author.bot) return;
     if (interaction.channel.type === 1) {
-      const guild = interaction.client.guilds.cache.get('764228270118928394');
-      // Find channel by id 841212768321273876
-      const channel = guild.channels.cache.get('841212768321273876');
+      const guild = interaction.client.guilds.cache.get('803701994221076511');
+      const channel = guild.channels.cache.get('948566535738388500');
       // Create an embed
       const embed = new EmbedBuilder()
         .setTitle('Message from ' + interaction.author.tag)

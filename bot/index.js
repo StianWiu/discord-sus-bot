@@ -46,8 +46,7 @@ const rest = new REST({ version: '10' }).setToken(process.env.BOT_TOKEN);
 
     // The put method is used to fully refresh all commands in the guild with the current set
     const data = await rest.put(
-      // Remember to change this when finished testing
-      Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
+      Routes.applicationCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
       { body: commands },
     );
 
@@ -86,8 +85,8 @@ app.get('/api/bot/unlock:userid', (req, res) => {
   userid = userid.substring(1);
   try {
     // Remember to change these when finished testing
-    const role = client.guilds.cache.get('764228270118928394').roles.cache.get('950127008644493313');
-    client.guilds.cache.get('764228270118928394').members.fetch(userid).then(member => {
+    const role = client.guilds.cache.get('803701994221076511').roles.cache.get('950127008644493313');
+    client.guilds.cache.get('803701994221076511').members.fetch(userid).then(member => {
       member.roles.remove(role);
       res.status(200).send("Role removed");
       // Message the user

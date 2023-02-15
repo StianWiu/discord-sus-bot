@@ -18,7 +18,7 @@ module.exports = {
             member.roles.add(value);
             await axios({
               method: 'post',
-              url: 'http://localhost:3003/api/user/join',
+              url: 'https://captcha.fridgedoorfamous.tech/api/user/join',
               data: {
                 userid: user.id,
               },
@@ -44,9 +44,8 @@ module.exports = {
                 .setFooter({ text: 'If any issues with verification dm Pignuuu#3333 or send a message here.', iconURL: 'https://cdn.discordapp.com/avatars/967346237365956638/8d03e0693acc7686f89004381aa1a21c.webp' });
               user.send({ embeds: [embed] })
 
-              const guild = interaction.client.guilds.cache.get('764228270118928394');
-              // Find channel by id 841212768321273876
-              const channel = guild.channels.cache.get('841212768321273876');
+              const guild = interaction.client.guilds.cache.get('803701994221076511');
+              const channel = guild.channels.cache.get('948566535738388500');
               // Create an embed
               const embed2 = new EmbedBuilder()
                 .setTitle(user.tag + ' joined the server and has been locked out due to their account age being below 5 months old.')

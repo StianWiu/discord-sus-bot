@@ -44,7 +44,7 @@ module.exports = {
       // More logic for removing the role from the user
       axios({
         method: 'get',
-        url: 'http://localhost:3004/api/bot/unlock:' + id,
+        url: 'https://captcha.fridgedoorfamous.tech/api/bot/unlock:' + id,
       })
     }
   },

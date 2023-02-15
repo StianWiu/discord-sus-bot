@@ -5,15 +5,14 @@ const { EmbedBuilder } = require('discord.js');
 const checkUsers = async () => {
   await axios({
     method: 'get',
-    url: 'http://localhost:3003/api/user/kick',
+    url: 'https://captcha.fridgedoorfamous.tech/api/user/kick',
   }).then(async (res) => {
     // Get the users that need to be kicked
     const users = res.data;
     if (users.length === 0) return;
     // Loop through all the users
     for (const userid of users) {
-      // We need to get the guild from id 764228270118928394
-      const guild = client.guilds.cache.get('764228270118928394');
+      const guild = client.guilds.cache.get('803701994221076511');
       // We need to get the member from the guild
       const member = await guild.members.fetch(userid);
       // First we need to message the user
@@ -30,7 +29,7 @@ const checkUsers = async () => {
         // Remove the user from the database
         await axios({
           method: 'get',
-          url: 'http://localhost:3003/api/user/gone:' + userid,
+          url: 'https://captcha.fridgedoorfamous.tech/api/user/gone:' + userid,
         })
       } catch (err) {
         console.log(err);
